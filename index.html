@@ -12,8 +12,11 @@
 		<h2 class="logo__title">AluraGeek</h2>
 	</header>
 	<main class="main-container">
-		<section class="products__section" data-product-list>
-			<!-- Products loaded dinamically with js -->
+		<section class="products__section">
+			<h2 class="main__section--title">Meus produtos:</h2>
+			<section class="products__container" data-product-list>
+				<!-- Products loaded dinamically with js -->
+			</section>
 		</section>
 		<section class="form__section">
 			<h2 class="main__section--title">Adicionar produto:</h2>
@@ -69,6 +72,7 @@
 			</ul>
 		</section>
 	</footer>
-	
+	<script src="./assets/js/controllers/main.js" type="module"></script>
+	<script type="module" src="./assets/js/controllers/createProduct.js"></script>
 </body>
 </html>
