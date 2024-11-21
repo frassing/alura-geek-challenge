@@ -1,0 +1,200 @@
+/* Fonts: IBM Plex Mono and Press Start 2P */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500;600;700&family=Press+Start+2P&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #750E21;
+	--secondary-color: #191919;
+	--title-font: "Press Start 2P", serif;
+	--text-font: "IBM Plex Mono", serif;
+	--base-color: #FFF;
+	--muted-color: #e5e5e5;
+	--success-color: #30dd81;
+	--failure-color: #e24034;
+}
+
+body {
+	background-color: var(--base-color);
+}
+
+.header-container,
+.main-container,
+.form__container,
+.form__buttons,
+.footer-container,
+.footer__logo,
+.footer__credits {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo__img {
+	width: 30%;
+	max-width: 8.625rem;
+}
+
+.logo__title {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.header-container,
+.footer-container {
+	background-color: var(--primary-color);
+}
+
+.header-container {
+	height: 6rem;
+	color: var(--muted-color);
+}
+
+/* ========================= MAIN ========================= */
+.main-container {
+	align-items: start;
+	padding: 1.5em 1.875em 1.875em;
+	gap: 3em;
+}
+
+.main__section--title {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	padding: 2.5em 0;
+	text-align: center;
+}
+
+.products__section, 
+.form__section {
+	padding: .5em;
+	justify-items: center;
+}
+
+/* ========================= FORM - ADD PRODUCT ========================= */
+.form__container {
+	flex-direction: column;
+	gap: 1.25em;
+}
+
+.form__container input {
+	font-family: var(--text-font);
+}
+
+.form__container input[type=text] {
+	font-weight: 600;
+	color: var(--secondary-color);
+	border: .25em solid var(--secondary-color);
+	border-radius: 1.875em;
+	padding: .75em .625em;
+	width: 90%;
+}
+
+.form__container input[type=text]::placeholder {
+	color: var(--secondary-color);
+}
+
+.form__container input[type=text]:required:invalid {
+	border-bottom: .25em solid var(--failure-color);
+}
+
+.form__container input[type=text]:valid {
+	border-bottom: .25em solid var(--success-color);
+}
+
+.form__buttons {
+	flex-wrap: wrap;
+	gap: .75em;
+}
+
+.form__buttons input {
+	font-weight: 500;
+	font-size: 1.25rem;
+	cursor: pointer;
+	border: solid .125em var(--secondary-color);
+	width: 9.375rem;
+	padding: .625em;
+	border-radius: 1em;
+	transition: all .1s;
+}
+
+.form__buttons input[type=submit] {
+	background-color: var(--secondary-color);
+	color: var(--base-color);
+}
+
+.form__buttons input[type=reset] {
+	background-color: var(--base-color);
+	color: var(--secondary-color);
+}
+
+.form__buttons input:hover {
+	background-color: var(--primary-color);
+	color: var(--base-color);
+	border-color: var(--primary-color);
+	box-shadow: 0 .125em .25em var(--secondary-color);
+}
+
+/* ========================= FOOTER ========================= */
+.footer-container {
+	justify-content: space-around;
+	gap: 1.25em;
+	min-height: 11.25rem;
+	color: var(--base-color);
+	padding: .625em;
+	text-align: center;
+}
+
+.footer-container li {
+	list-style: none;
+}
+
+.footer-container a {
+	color: var(--base-color);
+}
+
+.footer__author--content {
+	text-transform: uppercase;
+	font-family: var(--text-font);
+}
+
+.footer__content--muted, 
+.footer__credits {
+	font-weight: 200;
+}
+
+.footer__author--socials li {
+	margin-top: 1.25em;
+	display: inline-block;
+}
+
+.footer__author--socials a {
+	text-decoration: none;
+	background-color: var(--secondary-color);
+	padding: .625em .5em;
+	border-radius: .625em;
+}
+
+.footer__credits--links {
+	font-family: var(--text-font);
+}
+
+/* ========================= MEDIAS ========================= */
+@media (max-width: 678px) {
+	.main-container {
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 1.25em 1.25em 2.5em;
+		gap: 1.5em;
+	}
+
+	.footer-container {
+		flex-direction: column;
+		gap: 1.875em;
+	}
+}
