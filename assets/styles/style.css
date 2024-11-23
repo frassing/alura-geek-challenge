@@ -24,6 +24,9 @@ body {
 
 .header-container,
 .main-container,
+.products__search, 
+.search__bar,
+.search__buttons,
 .product__card,
 .form__container,
 .form__buttons,
@@ -87,6 +90,70 @@ body {
 	max-width: 65%;
 }
 
+/* SEARCH BAR */
+.products__search {
+	margin: 0 0 1em;
+	width: 100%;
+	height: 4rem;
+	gap: .25em;
+}
+
+.search__bar {
+	flex-direction: column;
+	font-family: var(--text-font);
+	width: 60%;
+	padding: .25em;
+	gap: .25em;
+}
+
+[data-search-input] {
+	font-family: var(--text-font);
+	font-weight: 600;
+	color: var(--secondary-color);
+	border: .25em solid var(--primary-color);
+	border-radius: 1em;
+	padding: .375em .625em;
+	align-self: stretch;
+}
+
+[data-search-input]::placeholder {
+	color: var(--secondary-color);
+}
+
+.search__alert-msg {
+	color: var(--primary-color);
+	font-size: .75rem;
+	padding-left: .625em;
+	align-self: flex-start;
+}
+
+.search__buttons { 
+	gap: .5em;
+}
+
+.search_btn {
+	cursor: pointer;
+	border: solid .25em var(--secondary-color);
+	padding: .5em;
+	border-radius: 1em;
+	transition: all .1s;
+	background-color: var(--secondary-color);
+	color: var(--base-color);
+}
+
+.search_btn img {
+	width: 1.625rem;
+	aspect-ratio: 1/1;
+}
+
+.search_btn:hover {
+	background-color: var(--primary-color);
+	color: var(--base-color);
+	border-color: var(--primary-color);
+	box-shadow: 0 .125em .25em var(--secondary-color);
+}
+
+/* PRODUCTS LIST */
 .products__container {
 	height: 50vh;
 	display: flex;
@@ -270,6 +337,18 @@ body {
 
 	.products__section {
 		max-width: initial;
+	}
+
+	.search__bar {
+		width: 95%;
+	}
+
+	.search_btn img {
+		width: 1.5rem;
+	}
+
+	.products__container {
+		height: 75vh;
 	}
 
 	.footer-container {

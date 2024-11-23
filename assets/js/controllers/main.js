@@ -10,7 +10,7 @@ export async function loadProductList() {
 			productList.appendChild(productCard);
 		});
 	} catch(error) {
-		console.log(error);
+		alert(error);
 		productList.innerHTML = `<h3 class="main__empty_list--message">Nenhum produto adicionado.</h3>`;
 	}	
 }

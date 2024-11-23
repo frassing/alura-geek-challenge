@@ -46,15 +46,32 @@ async function deleteProduct(id) {
 		});
 	
 		if (!response.ok) {
-			throw new Error('Erro ao excluir o produto.');
+			throw new Error('Não foi possível excluir o produto.');
 		}
 	} catch (error) {
 		throw error;
 	}
 }
 
+async function searchProduct(searchTerm) {
+	try {  
+		const response = await fetch(BASE_URL);
+		if(response.ok) {
+			const products = await response.json();
+			// Filtra a lista de produtos para retornar apenas produtos que incluem o conteúdo do termo buscado 
+			const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+			return filteredProducts;
+		} else {
+			throw new Error('Ocorreu um erro ao buscar produtos.'); 
+		}
+	} catch (error) { 
+		throw error; 
+	}
+}
+
 export const conectApi = {
 	getProducts,
 	addProduct,
-	deleteProduct
+	deleteProduct,
+	searchProduct
 }
