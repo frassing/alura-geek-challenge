@@ -39,7 +39,22 @@ async function addProduct(name, price, image) {
 	}
 }
 
+async function deleteProduct(id) {
+	try {
+		const response = await fetch(`${BASE_URL}/${id}`, {
+			method: "DELETE"
+		});
+	
+		if (!response.ok) {
+			throw new Error('Erro ao excluir o produto.');
+		}
+	} catch (error) {
+		throw error;
+	}
+}
+
 export const conectApi = {
 	getProducts,
-	addProduct
+	addProduct,
+	deleteProduct
 }

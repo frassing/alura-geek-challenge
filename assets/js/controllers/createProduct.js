@@ -29,6 +29,7 @@ async function addNewProduct(event) {
 		const productCard = createCard(product.name, product.price, product.image, product.id);
 
 		productList.appendChild(productCard);
+		form.reset();
 		alert("Produto adicionado com sucesso!");
 	} catch (error) {
 		alert(error);

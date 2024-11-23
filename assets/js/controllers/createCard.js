@@ -1,3 +1,5 @@
+import addRemoveButtonListeners from "./removeProduct.js";
+
 export function createCard(name, price, image, id) {
 	const newCard = document.createElement("div");
 	newCard.classList.add("product__card");
@@ -14,5 +16,6 @@ export function createCard(name, price, image, id) {
 			</div>
 		</section>
 	`;
+	addRemoveButtonListeners(newCard, name, id);
 	return newCard;
 }
