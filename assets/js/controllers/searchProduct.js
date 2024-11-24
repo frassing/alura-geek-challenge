@@ -1,6 +1,7 @@
 import { conectApi } from "../services/conectApi.js";
 import { createCard } from "./createCard.js";
 import { loadProductList } from "./main.js";
+import showAlertModal from "../components/modalAlert.js";
 
 const searchInput = document.querySelector('[data-search-input]');
 const alertMsg = document.querySelector('.search__alert-msg');
@@ -44,7 +45,7 @@ async function searchForProduct(event) {
 			productList.innerHTML = `<h3 class="main__empty_list--message">Nenhum produto encontrado.</h3>`;
 		}
 	} catch (error) {
-		alert(error);
+		showAlertModal("Falha", error);
 	}
 }
 

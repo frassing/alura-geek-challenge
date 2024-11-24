@@ -1,5 +1,6 @@
 import { conectApi } from "../services/conectApi.js";
 import { createCard } from "./createCard.js";
+import showAlertModal from "../components/modalAlert.js";
 
 const form = document.querySelector(".form__container");
 
@@ -30,9 +31,9 @@ async function addNewProduct(event) {
 
 		productList.appendChild(productCard);
 		form.reset();
-		alert("Produto adicionado com sucesso!");
+		showAlertModal("Sucesso!", "Produto adicionado com sucesso!");
 	} catch (error) {
-		alert(error);
+		showAlertModal("Falha", error);
 	}
 }
 

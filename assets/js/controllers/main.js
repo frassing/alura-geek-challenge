@@ -1,5 +1,6 @@
 import {conectApi} from "../services/conectApi.js"
 import { createCard } from "./createCard.js";
+import showAlertModal from "../components/modalAlert.js";
 
 export async function loadProductList() {
 	const productList = document.querySelector("[data-product-list]");
@@ -10,7 +11,7 @@ export async function loadProductList() {
 			productList.appendChild(productCard);
 		});
 	} catch(error) {
-		alert(error);
+		showAlertModal("Falha", error);
 		productList.innerHTML = `<h3 class="main__empty_list--message">Nenhum produto adicionado.</h3>`;
 	}	
 }
