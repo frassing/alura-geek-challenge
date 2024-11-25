@@ -86,8 +86,26 @@
 			</ul>
 		</section>
 	</footer>
+
+	<div class="modal__overlay modal__alert" data-modal>
+		<div class="modal__popup">
+			<div class="modal__container">				
+				<header class="modal__header">
+					<h3 class="modal__title"></h3>
+					<span class="modal__close" title="Fechar">&#120;</span>
+				</header>
+				<section class="modal__content">
+					<p class="modal__message--alert"></p>
+					<button type="button" title="Ok" class="modal__button modal__button--primary modal__close">Ok</button>
+				</section>
+			</div>
+		</div>
+	</div>
+
 	<script src="./assets/js/controllers/main.js" type="module"></script>
 	<script src="./assets/js/controllers/createProduct.js" type="module"></script>
 	<script src="./assets/js/controllers/searchProduct.js" type="module"></script>
+	<script src="./assets/js/components/modalAlert.js" type="module"></script>
+	<script src="./assets/js/components/modalConfirm.js" type="module"></script>
 </body>
 </html>

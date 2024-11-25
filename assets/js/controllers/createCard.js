@@ -1,5 +1,6 @@
 import addRemoveButtonListeners from "./removeProduct.js";
 
+// cria a estrutura HTML de um card com as informações que o usuário insere no formulário
 export function createCard(name, price, image, id) {
 	const newCard = document.createElement("div");
 	newCard.classList.add("product__card");
@@ -16,6 +17,7 @@ export function createCard(name, price, image, id) {
 			</div>
 		</section>
 	`;
+	// adiciona os listeners aos botões de excluir
 	addRemoveButtonListeners(newCard, name, id);
 	return newCard;
 }
