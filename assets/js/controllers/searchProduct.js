@@ -21,6 +21,7 @@ searchInput.addEventListener('focus', () => {
 	alertMsg.textContent = '';
 });
 
+// pega um dado inserido na caixa de pesquisa e tenta procurar na base de dados, se houver algum resultado, exibe apenas os produtos encontrados.
 async function searchForProduct(event) {
 	event.preventDefault();
 	const searchTerm = searchInput.value.trim();
@@ -35,7 +36,7 @@ async function searchForProduct(event) {
 		const productList = document.querySelector('[data-product-list]');
 		productList.innerHTML = '';
 
-		// Para cada resultado da busca, criar um card e adiciona à lista de produtos
+		// Para cada resultado da busca, criar um card e adicionar à lista de produtos
 		searchResult.forEach(prod => {
 			const result = createCard(prod.name, prod.price, prod.image, prod.id);
 			productList.appendChild(result);
@@ -58,4 +59,3 @@ async function clearSearch(event) {
 	alertMsg.textContent = '';
 	searchInput.value = '';
 }
-

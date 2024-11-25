@@ -2,6 +2,7 @@ import {conectApi} from "../services/conectApi.js"
 import { createCard } from "./createCard.js";
 import showAlertModal from "../components/modalAlert.js";
 
+// tenta carregar a lista de produtos da base de dados e exibir em formato de cards
 export async function loadProductList() {
 	const productList = document.querySelector("[data-product-list]");
 	try {

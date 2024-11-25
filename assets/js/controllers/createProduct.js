@@ -14,6 +14,7 @@ function formatPrice(value) {
 	return priceFormated;
 }
 
+// função responsável por pegar dados do formulário e mandar adicionar um produto na base de dados, em seguida criar um card do produto criado
 async function addNewProduct(event) {
 	event.preventDefault();
 	const name = document.querySelector("[data-name-input]").value;
