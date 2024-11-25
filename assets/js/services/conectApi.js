@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:3000/products";
+// const BASE_URL = "http://localhost:3000/products";
+const BASE_URL = "https://my-json-server.typicode.com/frassing/alura-geek-challenge/products";
 
 async function getProducts() {
 	try {
